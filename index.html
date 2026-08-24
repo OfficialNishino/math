@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question Game</title>
+    <title>Question 1</title>
 
     <style>
         body {
@@ -43,41 +43,49 @@
             margin-top: 25px;
             font-size: 18px;
             font-weight: bold;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #eeeeee;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>Question!</h1>
+    <h1>Question 1</h1>
 
-        <p>Which shape has four equal sides?</p>
+    <p>What is a parallelogram?</p>
 
-        <button onclick="answer('A')">A. Rectangle</button>
-        <button onclick="answer('B')">B. Triangle</button>
-        <button onclick="answer('C')">C. Square</button>
-        <button onclick="answer('D')">D. Trapezoid</button>
+    <button onclick="answer('A')">A. A quadrilateral with no equal sides</button>
+    <button onclick="answer('B')">B. A quadrilateral with two pairs of parallel sides</button>
+    <button onclick="answer('C')">C. A triangle with two equal sides</button>
+    <button onclick="answer('D')">D. A shape with four right angles only</button>
 
-        <p id="result"></p>
+    <p id="result"></p>
 
-    </div>
+</div>
 
-    <script>
-        function answer(choice) {
+<script>
+function answer(choice) {
 
-            let result = document.getElementById("result");
+    let result = document.getElementById("result");
 
-            if (choice === "C") {
-                result.innerHTML = "Correct! A square has four equal sides.";
-            } 
-            else {
-                result.innerHTML = "Not quite! Try looking for the shape where all four sides are equal.";
-            }
-
-        }
-    </script>
+    if (choice === "A") {
+        result.innerHTML = "Not quite! A parallelogram has two pairs of parallel sides.";
+    }
+    else if (choice === "B") {
+        result.innerHTML = "Correct! That is the defining property of a parallelogram.";
+    }
+    else if (choice === "C") {
+        result.innerHTML = "Nope! A triangle has only three sides.";
+    }
+    else {
+        result.innerHTML = "Not exactly! A rectangle has four right angles, but not every parallelogram does.";
+    }
+}
+</script>
 
 </body>
 </html>
